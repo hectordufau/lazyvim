@@ -9,23 +9,23 @@ discipline.cowboy()
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-keymap.set("n", "x", "_x")
+-- keymap.set("n", "x", "_x")
 
 -- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+keymap.set("n", "+", "<C-a>", { desc = "Increment" })
+keymap.set("n", "-", "<C-x>", { desc = "Decrement" })
 
 -- Delete a word backwards
 keymap.set("n", "dw", "vb_d")
 
 -- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+keymap.set("n", "<C-a>", "gg<S-v>G", { desc = "Select All" })
 
 -- Jumplist
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
-keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
-keymap.set("n", "<Leader>O", "O<Esc>^Da", opts)
+keymap.set("n", "<Leader>o", "o<Esc>^Da", { noremap = true, silent = true, desc = "New line below" })
+keymap.set("n", "<Leader>O", "O<Esc>^Da", { noremap = true, silent = true, desc = "New line above" })
 
 -- New tab
 keymap.set("n", "te", ":tabedit")
