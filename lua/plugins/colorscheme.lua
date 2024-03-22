@@ -1,9 +1,18 @@
 return {
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = false,
+    branch = "osaka",
+    lazy = true,
     priority = 1000,
-    opts = {},
+    opts = function()
+      return {
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+          floats = "transparent",
+        },
+      }
+    end,
   },
   {
     "LazyVim/LazyVim",
